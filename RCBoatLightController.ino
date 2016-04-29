@@ -1,5 +1,5 @@
 #define RXpin       13
-#define numSequences 4   // Put here the number of sequences you have
+#define numSequences 12   // Put here the number of sequences you have
 
 #define lamp1       9
 #define lamp2       8
@@ -14,6 +14,8 @@
 #define port        5
 #define spotlights  19
 #define decklights  16
+#define engineRoom  17
+#define wheelHouse  15
 
 #define ON HIGH
 #define OFF LOW
@@ -31,7 +33,9 @@ void setup() {
     pinMode(a, OUTPUT);
   }
   pinMode(19, OUTPUT);
+  pinMode(15, OUTPUT);
   pinMode(16, OUTPUT);
+  pinMode(17, OUTPUT);
   sequence1();
 }
 
@@ -57,13 +61,13 @@ void detectChange() {
 }
 
 void changeLights() {
-  
+
   index = index + 1;
   if (index > numSequences) {
     index = 1;
   }
   delay(50);
-  
+
   switch (index) {
     case 1:
       sequence1();
@@ -142,6 +146,8 @@ void sequence1() {
   digitalWrite(starboard, OFF);
   digitalWrite(port, OFF);
   digitalWrite(decklights, OFF);
+  digitalWrite(engineRoom, OFF);
+  digitalWrite(wheelHouse, OFF);
 }
 
 void sequence2() {
@@ -157,10 +163,156 @@ void sequence2() {
   digitalWrite(spotlights, OFF);
   digitalWrite(starboard, ON);
   digitalWrite(port, ON);
-  digitalWrite(decklights, ON);
+  digitalWrite(decklights, OFF);
+  digitalWrite(engineRoom, OFF);
+  digitalWrite(wheelHouse, OFF);
 }
 
 void sequence3() {
+  digitalWrite(lamp1, OFF);
+  digitalWrite(lamp2, OFF);
+  digitalWrite(lamp3, OFF);
+  digitalWrite(lamp4, OFF);
+  digitalWrite(lamp5, OFF);
+  digitalWrite(lamp6, OFF);
+  digitalWrite(lamp7, OFF);
+  digitalWrite(lamp8, OFF);
+  digitalWrite(lamp9, OFF);
+  digitalWrite(spotlights, OFF);
+  digitalWrite(starboard, ON);
+  digitalWrite(port, ON);
+  digitalWrite(decklights, OFF);
+  digitalWrite(engineRoom, OFF);
+  digitalWrite(wheelHouse, ON);
+}
+
+void sequence4() {
+  digitalWrite(lamp1, OFF);
+  digitalWrite(lamp2, OFF);
+  digitalWrite(lamp3, OFF);
+  digitalWrite(lamp4, OFF);
+  digitalWrite(lamp5, OFF);
+  digitalWrite(lamp6, OFF);
+  digitalWrite(lamp7, OFF);
+  digitalWrite(lamp8, OFF);
+  digitalWrite(lamp9, OFF);
+  digitalWrite(spotlights, OFF);
+  digitalWrite(starboard, ON);
+  digitalWrite(port, ON);
+  digitalWrite(decklights, OFF);
+  digitalWrite(engineRoom, ON);
+  digitalWrite(wheelHouse, ON);
+}
+
+void sequence5() {
+  digitalWrite(lamp1, OFF);
+  digitalWrite(lamp2, OFF);
+  digitalWrite(lamp3, OFF);
+  digitalWrite(lamp4, OFF);
+  digitalWrite(lamp5, OFF);
+  digitalWrite(lamp6, OFF);
+  digitalWrite(lamp7, OFF);
+  digitalWrite(lamp8, OFF);
+  digitalWrite(lamp9, OFF);
+  digitalWrite(spotlights, OFF);
+  digitalWrite(starboard, ON);
+  digitalWrite(port, ON);
+  digitalWrite(decklights, ON);
+  digitalWrite(engineRoom, ON);
+  digitalWrite(wheelHouse, ON);
+}
+
+void sequence6() {
+  digitalWrite(lamp1, ON);
+  digitalWrite(lamp2, OFF);
+  digitalWrite(lamp3, OFF);
+  digitalWrite(lamp4, OFF);
+  digitalWrite(lamp5, OFF);
+  digitalWrite(lamp6, OFF);
+  digitalWrite(lamp7, OFF);
+  digitalWrite(lamp8, OFF);
+  digitalWrite(lamp9, ON);
+  digitalWrite(spotlights, OFF);
+  digitalWrite(starboard, ON);
+  digitalWrite(port, ON);
+  digitalWrite(decklights, ON);
+  digitalWrite(engineRoom, ON);
+  digitalWrite(wheelHouse, ON);
+}
+
+void sequence7() {
+  digitalWrite(lamp1, ON);
+  digitalWrite(lamp2, ON);
+  digitalWrite(lamp3, OFF);
+  digitalWrite(lamp4, OFF);
+  digitalWrite(lamp5, OFF);
+  digitalWrite(lamp6, OFF);
+  digitalWrite(lamp7, OFF);
+  digitalWrite(lamp8, ON);
+  digitalWrite(lamp9, ON);
+  digitalWrite(spotlights, OFF);
+  digitalWrite(starboard, ON);
+  digitalWrite(port, ON);
+  digitalWrite(decklights, ON);
+  digitalWrite(engineRoom, ON);
+  digitalWrite(wheelHouse, ON);
+}
+
+void sequence8() {
+  digitalWrite(lamp1, ON);
+  digitalWrite(lamp2, ON);
+  digitalWrite(lamp3, OFF);
+  digitalWrite(lamp4, OFF);
+  digitalWrite(lamp5, OFF);
+  digitalWrite(lamp6, OFF);
+  digitalWrite(lamp7, ON);
+  digitalWrite(lamp8, ON);
+  digitalWrite(lamp9, ON);
+  digitalWrite(spotlights, OFF);
+  digitalWrite(starboard, ON);
+  digitalWrite(port, ON);
+  digitalWrite(decklights, ON);
+  digitalWrite(engineRoom, ON);
+  digitalWrite(wheelHouse, ON);
+}
+
+void sequence9() {
+  digitalWrite(lamp1, ON);
+  digitalWrite(lamp2, ON);
+  digitalWrite(lamp3, OFF);
+  digitalWrite(lamp4, ON);
+  digitalWrite(lamp5, OFF);
+  digitalWrite(lamp6, OFF);
+  digitalWrite(lamp7, ON);
+  digitalWrite(lamp8, ON);
+  digitalWrite(lamp9, ON);
+  digitalWrite(spotlights, OFF);
+  digitalWrite(starboard, ON);
+  digitalWrite(port, ON);
+  digitalWrite(decklights, ON);
+  digitalWrite(engineRoom, ON);
+  digitalWrite(wheelHouse, ON);
+}
+
+void sequence10() {
+  digitalWrite(lamp1, ON);
+  digitalWrite(lamp2, ON);
+  digitalWrite(lamp3, ON);
+  digitalWrite(lamp4, ON);
+  digitalWrite(lamp5, ON);
+  digitalWrite(lamp6, OFF);
+  digitalWrite(lamp7, ON);
+  digitalWrite(lamp8, ON);
+  digitalWrite(lamp9, ON);
+  digitalWrite(spotlights, OFF);
+  digitalWrite(starboard, ON);
+  digitalWrite(port, ON);
+  digitalWrite(decklights, ON);
+  digitalWrite(engineRoom, ON);
+  digitalWrite(wheelHouse, ON);
+}
+
+void sequence11() {
   digitalWrite(lamp1, ON);
   digitalWrite(lamp2, ON);
   digitalWrite(lamp3, ON);
@@ -174,9 +326,11 @@ void sequence3() {
   digitalWrite(starboard, ON);
   digitalWrite(port, ON);
   digitalWrite(decklights, ON);
+  digitalWrite(engineRoom, ON);
+  digitalWrite(wheelHouse, ON);
 }
 
-void sequence4() {
+void sequence12() {
   digitalWrite(lamp1, ON);
   digitalWrite(lamp2, ON);
   digitalWrite(lamp3, ON);
@@ -190,30 +344,8 @@ void sequence4() {
   digitalWrite(starboard, ON);
   digitalWrite(port, ON);
   digitalWrite(decklights, ON);
-}
-
-void sequence5() {
-}
-
-void sequence6() {
-}
-
-void sequence7() {
-}
-
-void sequence8() {
-}
-
-void sequence9() {
-}
-
-void sequence10() {
-}
-
-void sequence11() {
-}
-
-void sequence12() {
+  digitalWrite(engineRoom, ON);
+  digitalWrite(wheelHouse, ON);
 }
 
 void sequence13() {
@@ -239,4 +371,3 @@ void sequence19() {
 
 void sequence20() {
 }
-
